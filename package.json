@@ -41,8 +41,7 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/react-app-env.d.ts",
-      "!src/reportWebVitals.ts",
-      "!src/index.tsx"
+      "!src/reportWebVitals.ts"
     ],
     "coverageThreshold": {
       "global": {
