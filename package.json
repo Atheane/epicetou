@@ -23,12 +23,12 @@
     "eject": "react-scripts eject",
     "commit": "cz",
     "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "prepush": "yarn test"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && yarn lint",
-      "pre-push": "yarn test"
+      "pre-commit": "yarn format && yarn lint"
     }
   },
   "eslintConfig": {
