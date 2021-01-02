@@ -18,7 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll=false",
+    "test:watch": "react-scripts test --watch",
     "eject": "react-scripts eject",
     "commit": "cz",
     "format": "prettier --write src/**/*.ts{,x}",
@@ -26,7 +27,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && yarn lint"
+      "pre-commit": "yarn format && yarn lint",
+      "pre-push": "yarn test"
     }
   },
   "eslintConfig": {
@@ -34,6 +36,22 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/react-app-env.d.ts",
+      "!src/reportWebVitals.ts",
+      "!src/index.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "browserslist": {
     "production": [
